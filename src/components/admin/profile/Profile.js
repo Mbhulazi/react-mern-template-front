@@ -74,6 +74,7 @@ const Profile = () => {
   const savePhoto = async (e) => {
     e.preventDefault();
     let imageURL;
+   
     try {
       if (
         profile !== null &&

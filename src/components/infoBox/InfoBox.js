@@ -8,7 +8,8 @@ const InfoBox = ({ bgColor, title, count, icon }) => {
       <p> {title} </p>
       <h4>{count} </h4>
     </span>
-  </div>)
+  </div>
+  );
 };
 
 export default InfoBox;

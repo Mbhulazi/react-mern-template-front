@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 import { changeUserRole, getUsers } from "../../redux/features/auth/authSlice";
 
 const ChangeRole = ({ _id }) => {
   const [userRole, setUserRole] = useState("");
   const dispatch = useDispatch();
+  
   const changeRole = async (e) => {
+    e.preventDefault();
+
     if (!userRole) {
       toast.error("Please select a role");
     }
+
     const userData = {
       role: userRole,
-      id: id,
+      id: _id,
     };
     await dispatch(changeUserRole(userData));
     await dispatch(getUsers());
